@@ -42,12 +42,21 @@ Provides a GUI to manage projects, Python/venv, Nginx reverse proxy, Docker, Pos
 2. Download `WorkspaceConfiguration.dmg`
 3. Open the DMG file
 4. Drag **Workspace Configuration** to the **Applications** folder
-5. First launch: right-click the app > **Open** (to bypass Gatekeeper)
+5. Double-click the app to launch — macOS will show a warning saying the app can't be opened because it's from an unidentified developer
+6. Open **System Settings** > **Privacy & Security**
+7. Scroll down to the **Security** section, you'll see a message:
+   > "Workspace Configuration" was blocked from use because it is not from an identified developer.
+8. Click **Open Anyway**
+9. Enter your password when prompted
+10. Click **Open** in the confirmation dialog
 
-> **Note:** If you see "App is damaged", open Terminal and run:
+The app will now launch normally. You only need to do this once — subsequent launches will work without any extra steps.
+
+> **Note:** If you see "App is damaged" instead, open Terminal and run:
 > ```bash
 > xattr -cr /Applications/Workspace\ Configuration.app
 > ```
+> Then try opening the app again.
 
 ### Windows
 
