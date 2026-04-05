@@ -50,6 +50,32 @@ Supports **Odoo projects** and other project types (Flutter, React, NextJS, .NET
    ./WorkspaceConfiguration.AppImage
    ```
 
+**Add to app menu & dock (optional):**
+
+Move the AppImage to a permanent location, then create a `.desktop` file:
+
+```bash
+# Move AppImage
+mkdir -p ~/AppImages
+mv WorkspaceConfiguration.AppImage ~/AppImages/
+
+# Create desktop entry
+cat > ~/.local/share/applications/workspace_configuration.desktop << 'EOF'
+[Desktop Entry]
+Name=Workspace Configuration
+Exec=$HOME/AppImages/WorkspaceConfiguration.AppImage
+Icon=workspaces
+Type=Application
+Categories=Development;
+Comment=Setup and manage development environments
+Terminal=false
+StartupWMClass=com.namchamvinhcuu.WorkspaceConfiguration
+EOF
+```
+
+> Replace `Exec=` path if you placed the AppImage elsewhere.
+> `StartupWMClass` is required for the dock to correctly group windows.
+
 ### macOS
 
 1. Go to [Releases](https://github.com/namchamvinhcuu/workspace-configuration/releases/latest)
@@ -204,6 +230,32 @@ Manage multiple repos in `addons/`:
    chmod +x WorkspaceConfiguration.AppImage
    ./WorkspaceConfiguration.AppImage
    ```
+
+**Thêm vào app menu & dock (tùy chọn):**
+
+Di chuyển AppImage tới vị trí cố định, sau đó tạo file `.desktop`:
+
+```bash
+# Di chuyển AppImage
+mkdir -p ~/AppImages
+mv WorkspaceConfiguration.AppImage ~/AppImages/
+
+# Tạo desktop entry
+cat > ~/.local/share/applications/workspace_configuration.desktop << 'EOF'
+[Desktop Entry]
+Name=Workspace Configuration
+Exec=$HOME/AppImages/WorkspaceConfiguration.AppImage
+Icon=workspaces
+Type=Application
+Categories=Development;
+Comment=Setup and manage development environments
+Terminal=false
+StartupWMClass=com.namchamvinhcuu.WorkspaceConfiguration
+EOF
+```
+
+> Sửa đường dẫn `Exec=` nếu bạn đặt AppImage ở nơi khác.
+> `StartupWMClass` bắt buộc để dock nhóm đúng cửa sổ app.
 
 ### macOS
 
